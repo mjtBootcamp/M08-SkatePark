@@ -1,0 +1,19 @@
+{
+  "name": "mariajosetolmo-prueba-skatepark-modulo8",
+  "version": "1.0.0",
+  "description": "'Prueba de modulo 8 de Desafío latam BootCamp JS FullStack'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjtBootcamp/m8-bootcamp.git"
+  },
+  "author": "María José Tolmo - Desafio Latam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjtBootcamp/m8-bootcamp/issues"
+  },
+  "homepage": "https://github.com/mjtBootcamp/m8-bootcamp#readme"
+}
