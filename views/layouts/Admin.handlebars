@@ -1,0 +1,58 @@
+  <body>
+    <h1>Skate Park</h1>
+
+    <div class="py-4">
+      <h2>Administración</h2>
+      <hr class="w-50" />
+
+      <table class="table w-50 m-auto">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo">
+          {{#each usuarios}}
+          <tr class={{#if this.estado}} "table-warning" {{/if}}>
+            <th scope="row">{{this.id}}</th>
+            <td><img style="width: 70px;height: 70px;" src="./public/img/{{this.foto}}"></img></td>
+            <td>{{this.nombre}}</td>
+            <td>{{this.anos_experiencia}}</td>
+            <td>{{this.especialidad}}</td>
+            <td><input type="checkbox" {{#if this.estado}} checked {{/if}} onclick="cambiarAuth({{this.id}},this)"/></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+  const changeStatus = async (id, e) => {
+    const estado = e.checked
+    const fila = e.parentElement.parentElement;
+    estado ? fila.className = "table-warning" : fila.className = " ";
+    let URLactual = window.location;
+
+    console.log(fila)
+    let res = await axios.put(`${URLactual.origin}/usuarios`, {
+      id,
+      estado
+    })
+    alert(estado ? 'Perfil de usuario aprobado' : 'Perfil de usuario en revisión')
+    try {
+
+    } catch ({ response }) {
+      const { data } = response
+      const { error } = data
+      alert(error)
+    }
+  }
+</script>
