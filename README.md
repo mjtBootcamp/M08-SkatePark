@@ -1,4 +1,4 @@
-﻿# La Nasa
+﻿# SkatePark
 
 1. Configurar la BBDD
 2. Iniciar el proyecto node
